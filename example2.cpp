@@ -15,7 +15,7 @@ int sum( int & a, int & b ){
 	return a + b;
 }
 
-int printArray( int * my_array, int size_of_the_array ){
+void printArray( int * my_array, int size_of_the_array ){
 	for( int i = 0; i < size_of_the_array; i++){
 		std::cout << my_array[i] << std::endl;
 	}	
