@@ -17,6 +17,9 @@ class Team {
 		/** Team constructor                                                  */
 		Team( const std::string & name );
 
+		/** Team destructor */
+		~Team();
+
 		/** @return The name of the team                                      */
 		const std::string & getName() const;
 
