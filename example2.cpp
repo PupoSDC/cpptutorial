@@ -1,5 +1,5 @@
 #include <iostream>
-// compile with g++ example1.cpp -o example1.x
+// compile with g++ example2.cpp -o example2.x
 
 // Sum pass by value (oveladed)
 int sum( int a, int b ){ 
@@ -7,16 +7,16 @@ int sum( int a, int b ){
 	return a + b;
 }
 
-// Sum pass by pointer (oveladed)
-int sum( int * a, int * b ){
-	return *a + *b;
+// Sum pass by reference
+int sum( int & a, int & b ){
+	return a + b;
 }
 
-// // Sum pass by reference
-// int sum( int & a, int & b ){
-// 	return a + b;
-// }
-
+int printArray( int * my_array, int size_of_the_array ){
+	for( int i = 0; i < size_of_the_array; i++){
+		std::cout << my_array[i] << std::endl;
+	}	
+}
 
 int main() {
 
@@ -24,7 +24,17 @@ int main() {
 	int * b = &a;     // Declaring a pointer to a variable
 	int & c = a;      // Declaring a refernece to a variable
 
+	int my_array[10000]; // creating an array of size 10000 (bad idea warning)
+	int * p_array = my_array;
 
-    std::cout << sum(&a, b) << std::endl;
+	// Create example values
+	my_array[0] = 125;
+	my_array[1] = 155;
+
+	// (p_array[x] ==> *(p_array+x)
+	std::cout << *(p_array+0) << " is the same as " << p_array[0] << std::endl;
+	std::cout << *(p_array+1) << " is the same as " << p_array[1] << std::endl;	
+
+
     return 0;
 }
