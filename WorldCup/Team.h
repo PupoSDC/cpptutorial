@@ -1,30 +1,29 @@
 #pragma once
+#include <vector>
 #include <string>
 
-// Header file, header files should not contain method definitions.
-// they exist as both a reference for you to use the code someone else did
-// AND for the code to know what is implemented in the cpp files.
-// It's almost like an interface. (cpp interfaces is somethign else)
+class Game;
+
 class Team {
 
 	private:
 
 		std::string name;
-		size_t games_played;
-		size_t victories;
-		size_t defeats;
-		int    goals_scored;
-		int    goals_against;
+		
+		std::vector< Game * > games_played;
 
 	public:
 
+		/** Team constructor                                                  */
 		Team( const std::string & name );
 
+		/** @return The name of the team                                      */
 		const std::string & getName() const;
 
+		/** @return the goal difference of a team                             */
 		int getGoalDifference() const;
 
-		void setGamesPlayed( size_t games_played );
+		/** @return The number of games the team played                        */
+		void updateWithGame( const Game & game );
 
-		void updateGamesPlayed();
 };
