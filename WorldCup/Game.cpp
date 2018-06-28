@@ -22,7 +22,7 @@ void Game::scoreTeam2() {
 		<< " scored!" 
 		<< std::endl;
 	team_2_goals++;
-}
+} 
 
 const Team * Game::getTeam1() const {
 	return team_1;
@@ -37,6 +37,16 @@ const Team * Game::getWinner() const {
 		return team_1;
 	} 
 	if( team_1_goals < team_2_goals ){
+		return team_2;
+	}
+	return NULL;
+}
+
+const Team * Game::getLooser() const {
+	if( team_1_goals < team_2_goals ){
+		return team_1;
+	} 
+	if( team_1_goals > team_2_goals ){
 		return team_2;
 	}
 	return NULL;

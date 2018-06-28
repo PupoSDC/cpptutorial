@@ -15,6 +15,6 @@ clean:
 	@echo " $(CC) $(CFLAGS) -c -o $@ $<"; \
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-worldcup.x: worldcup.cpp 
+worldcup.x: worldcup.cpp $(OBJECTS)
 	@echo " $(CC) $(CFLAGS) -o worldcup.x $(OBJECTS)"; \
 	$(CC) $(CFLAGS) -o worldcup.x $(OBJECTS)

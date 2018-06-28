@@ -35,6 +35,8 @@ class Game {
 
 		const Team * getWinner() const;
 
+		const Team * getLooser() const;
+
 		size_t getTeam1Goals() const;
 
 		size_t getTeam2Goals() const;

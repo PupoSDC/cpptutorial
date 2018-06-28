@@ -10,7 +10,7 @@ class Team {
 
 		std::string name;
 		
-		std::vector< Game * > games_played;
+		std::vector< const Game * > games_played;
 
 	public:
 
@@ -26,7 +26,13 @@ class Team {
 		/** @return the goal difference of a team                             */
 		int getGoalDifference() const;
 
-		/** @return The number of games the team played                        */
-		void updateWithGame( const Game & game );
+		size_t getNumberOfVictories() const;
+
+		size_t getNumberOfDefeats() const;
+
+		size_t getNumberOfTies() const;
+
+		/** Adds a game to the list of games this team played                 */
+		void addGame( const Game & game );
 
 };
