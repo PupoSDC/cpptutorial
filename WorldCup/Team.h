@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+
 // Header file, header files should not contain method definitions.
 // they exist as both a reference for you to use the code someone else did
 // AND for the code to know what is implemented in the cpp files.
@@ -20,5 +22,9 @@ class Team {
 
 		const std::string & getName() const;
 
-		int goalDifference() const;
+		int getGoalDifference() const;
+
+		void setGamesPlayed( size_t games_played );
+
+		void updateGamesPlayed();
 };
