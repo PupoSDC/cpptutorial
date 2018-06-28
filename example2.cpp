@@ -3,7 +3,7 @@
 
 // Sum pass by value (oveladed)
 int * sum( int * lhs, int * rhs, int size ){
-	int response[size];
+	int * response = new int[size];
 	for( int i = 0; i < size; i++ ){
 		response[i] = lhs[i] + rhs[i];
 	}
@@ -38,8 +38,14 @@ int main() {
 	std::cout << *(p_array+0) << " is the same as " << p_array[0] << std::endl;
 	std::cout << *(p_array+1) << " is the same as " << p_array[1] << std::endl;	
 
-	sum( my_array, my_array, 10); 
+	int * new_array;
+	
+	while(true){
+		new_array = sum( my_array, my_array, 10);
+		delete new_array;
+	}
 
+	printArray( new_array, 10 );
 
     return 0;
 }

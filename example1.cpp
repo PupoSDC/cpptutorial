@@ -19,6 +19,9 @@ int main() {
 	int * b = &a;     // Declaring a pointer to a variable
 	int & c = a;      // Declaring a refernece to a variable
 
+	int * d = new int(124);
+
     std::cout << sum(&a, b) << std::endl;
+    std::cout <<    *d   << std::endl;
     return 0;
 }
