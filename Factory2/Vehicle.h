@@ -5,18 +5,22 @@
 
 class Vehicle {
 
+	/** Can only be accessed to THIS class methods */
 	private:
 
-		std::string vehicle_type;
-		int wheels;
-		int doors;
+		std::string name;
 		double velocity;
 
+	/** Can be accesse by THIS class and its subclasses */
+	protected:
+
+		/** Vehicle can only be instatiated by its subclasses */
+		Vehicle( const std::string & name, double velocity );
+
+	/** Can be accessed from outside the class */
 	public:
 
-		Vehicle( const std::string & vehicle_type );
-
-		const std::string & getVehicleType() const;
+		const std::string & getName() const;
 
 		double getVelocity() const;
 
