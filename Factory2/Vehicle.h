@@ -22,7 +22,7 @@ class Vehicle {
 
 		const std::string & getName() const;
 
-		double getVelocity() const;
+		virtual double getVelocity() const;
 
 };
 
