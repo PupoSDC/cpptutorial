@@ -41,7 +41,7 @@
 // Create a Template class for thigns that make noise INSTEAD of using 
 // Polymorphism
 //
-// run with g++ solution.cpp -Dpart2
+// run with g++ solution.cpp -Dpart3
 
 
 #ifdef part3
